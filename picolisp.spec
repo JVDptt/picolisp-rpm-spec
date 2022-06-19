@@ -2,9 +2,9 @@
 # RPM spec file for PicoLisp:
 #
 #
-%global source_url         https://software-lab.de/pil21.tgz
 %global last_pil21_version 22.6.17
 %global pil21_src          pil21.tgz
+%global source_url         https://software-lab.de/%{pil21_src}
 %bcond_with auto_download
 %global   __brp_mangle_shebangs %{nil}
 # pico's shebangs are a bit special!
@@ -20,6 +20,7 @@
 Name:	  picolisp
 Summary:  Pragmatic, Minimalist, Flexible, small footprint LISP Interpreter with built-in DB, HTTP/HTML, Prolog Support
 URL:      https://www.picolisp.com
+# This 'pil21.tgz' file is updated daily by Alexander Burger:
 Source0:  %{source_url}
 
 %if %{with auto_download}
@@ -52,7 +53,6 @@ Version:  %{new_pil21_version}
 Release:  1%{?dist}
 
 License:  BSD
-# This is updated daily by Alexander Burger:
 
 # Make the makefile verbose instead of .SILENT:
 Patch0:   picolisp-verbose-makefile.patch
