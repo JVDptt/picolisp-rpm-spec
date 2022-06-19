@@ -11,7 +11,7 @@
 %global   debug_package %{nil}
 # pico is NOT built with any debuginfo - but it comes with its own debugger!
 #
-%global   __requires_exclude_from ^/data/data/com.termux/files/home/pil21/pil$
+%global   __requires_exclude_from ^%{_datadir}/%{name}/bin/pty$
 # This is a Template script for installation into Android Termux for PilBox,
 # not used directly by this package; this package , IFF the requisite
 # Android Tools are in $PATH (aapt + compilers) DOES allow users to build
